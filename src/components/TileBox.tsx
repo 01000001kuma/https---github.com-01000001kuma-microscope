@@ -31,8 +31,9 @@ function TileBox(props: any) {
         {post.map(pro=>{
             return(
                 <div className="col-md-3 text-center">
-                    <img className="w-512" src={pro.id} alt="tileImage" />
-                    <p>{pro.fileName}</p>
+                    <img className="w-512" src={pro._id} alt="tileImage" />
+                    <p>{pro._fileName}</p>
+                    {/* <button onClick={}>View Sample</button> */}
                 </div>
             )
         })}

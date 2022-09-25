@@ -1,5 +1,6 @@
 import Navbar from '../../components/Navbar'
-import styles from './Home.module.css'
+import Controller from '../../components/Controller';
+import './Home.module.css'
 import TileBox from '../../components/TileBox';
 
 
@@ -11,6 +12,7 @@ export function Home() {
         
         <>
         <Navbar />
+        <Controller />
         <TileBox tile={undefined} />
         </>
     );
