@@ -38,35 +38,35 @@ export function Tiles() {
           this.isNum = function (o) {
             return /^(-?\d+)(\.\d+)?$/.test(o)
           }
-          // 初始化
+          // initialization
           this.init()
         }
       
         init() {
           this.initData()
-          this.initListener()
+          this.initListener()初始化放大倍数
         }
       
         initData() {
           let { width: imageW, height: imageH } = this.image
           let { width: cavW, height: cavH } = this.canvas
-          // 放大倍数
+          // gain
           this.imgScale = 1
-          // 旋转角度
+          // Rotation angle
           this.angle = 0
-          // 竖向像素反转
+          // Vertical pixel inversion
           this.isVRevert = 1
-          // 横向像素反转
+          // Horizontal pixel inversion
           this.isHRevert = 1
-          // 是否移动
+          // whether to move
           this.isMove = false
-          // 图片的宽度
+          // the width of the image
           this.imageW = imageW
-          // 图片的高度
+          // the height of the picture
           this.imageH = imageH
-          // 画布的宽度
+          // the width of the canvas
           this.cavW = cavW
-          // 画布的高度
+          // the height of the canvas
           this.cavH = cavH
           let size = this.getFitSize()
           this.imgX = size.x
@@ -74,7 +74,7 @@ export function Tiles() {
           this.image = this.originalImg
         }
       
-        // 初始化监听
+        // Initialize listener
         initListener() {
           this.canvas.addEventListener('mousedown', this, false)
           this.canvas.addEventListener('mouseup', this, false)
@@ -107,7 +107,7 @@ export function Tiles() {
           this.canvas.removeEventListener('mousemove', this, false)
         }
       
-        // 鼠标按下
+        // mouse down
         mousedown(event) {
           this.mouseDownPos = this.windowToCanvas(event.clientX, event.clientY)
           this.isMove = true
@@ -115,14 +115,14 @@ export function Tiles() {
           this.canvas.addEventListener('mousemove', this, false)
         }
       
-        // 鼠标抬起
+        // mouse up
         mouseup() {
           this.isMove = false
           this.canvas.style.cursor = 'default '
           this.canvas.removeEventListener('mousemove', this, false)
         }
       
-        // 鼠标移动
+        // mouse movement
         mousemove(event) {
           if (!this.isMove) {
             return
@@ -139,7 +139,7 @@ export function Tiles() {
           this.draw()
         }
       
-        // 监听canvas放大缩小事件
+        // Listen to canvas zoom in and out events
         mousewheel(event) {
           let pos = this.windowToCanvas(event.clientX, event.clientY)
           let _wheelDelta = event.wheelDelta ? event.wheelDelta : (event.deltaY * (-40))
@@ -160,7 +160,7 @@ export function Tiles() {
             this.draw()
           }
         }
-        // 设置成原始尺寸
+        // set to original size
         setOriginalSize() {
           let size = this.getFitSize()
           this.imgScale = this.originalImg.width / size.w
@@ -177,7 +177,7 @@ export function Tiles() {
           }
           this.draw()
         }
-        // 销毁
+        // destroy
         dstroy() {
           this.canvas.removeEventListener('mousedown', this, false)
           this.canvas.removeEventListener('mouseout', this, false)
@@ -188,7 +188,7 @@ export function Tiles() {
           this.image = null
         }
       
-        // 获取窗口中canvas的区域
+        // Get the area of ​​the canvas in the window
         windowToCanvas(x, y) {
           let bbox = this.canvas.getBoundingClientRect()
           return {
@@ -197,17 +197,17 @@ export function Tiles() {
           }
         }
       
-        // 清空
+        // empty
         clearCanvas() {
           this.ctx.clearRect(0, 0, this.cavW, this.cavH)
         }
       
         /**
          * 画
-         * x 图片的位置
-         * y 图片的位置
-         * w 图片的宽
-         * h 图片的高
+         * x the location of the picture
+         * y the location of the picture
+         * w width of the picture
+         * h width of the picture
          *
          * */
         renderImage(x, y, w, h) {
@@ -222,19 +222,19 @@ export function Tiles() {
           this.ctx.restore()
         }
       
-        // 旋转角度
+        // Rotation angle
         rotate(rad) {
           this.angle += rad
           this.draw()
         }
       
-        // 垂直镜像
+        // vertical mirror
         vRevert() {
           this.isVRevert *= -1
           this.draw()
         }
       
-        // 水平镜像
+        // Horizontal mirror
         hRevert() {
           this.isHRevert *= -1
           this.draw()
