@@ -1,1 +1,1 @@
-export * from "./Gamemode";
+export * from "./Tiles";
