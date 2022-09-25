@@ -1,13 +1,9 @@
-import styles from '/home/akuma/Documents/NhsqbS8dJAy7EjAy24ox/src/ui/GameMode/Gamemode.module.css'
-import mask from '/home/akuma/Documents/NhsqbS8dJAy7EjAy24ox/src/ui/Home/mask.svg'
-import full from '/home/akuma/Documents/NhsqbS8dJAy7EjAy24ox/src/ui/Home/full.svg'
-import face from '/home/akuma/Documents/NhsqbS8dJAy7EjAy24ox/src/Images/icon/face_black_24dp.svg'
-import robot from '/home/akuma/Documents/NhsqbS8dJAy7EjAy24ox/src/Images/icon/smart_toy_black_24dp.svg'
+import styles from './Tiles.module.css'
 import { Link } from 'react-router-dom'
 
 // Game mode screen
 
-export function Gamemode() {
+export function Tiles() {
 
     return (
         
@@ -18,9 +14,6 @@ export function Gamemode() {
                     
                     <div className={styles.all}>
                         
-                        <img width={80} src={mask} className={styles.mask} alt="board"/>
-                   
-                        <img width={80} src={full} className={styles.full} alt="game logo"/>
                         
                     </div>
                     
@@ -29,9 +22,7 @@ export function Gamemode() {
                             
                             <button  className={styles.start} type="button" >
                                 
-                                <img src={face} className={styles.face} alt="face icon"/>   
-                                <span className={styles.text}>Vs</span>
-                                <img src={face} className={styles.face} alt="face icon"/>                           
+                      
 
                             </button>
 
@@ -40,9 +31,7 @@ export function Gamemode() {
                             
                             <button  className={styles.start} type="button" >
                                 
-                                <img src={face} className={styles.face} alt="face icon"/>
-                                <span className={styles.text}>Vs</span>
-                                <img src={robot} className={styles.robot} alt="robot icon"/>                          
+                      
 
                             </button>
                             
@@ -60,4 +49,4 @@ export function Gamemode() {
 
 }
 
-export default Gamemode
+export default Tiles
