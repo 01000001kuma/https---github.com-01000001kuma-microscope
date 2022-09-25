@@ -1,5 +1,10 @@
 import React from "react";
 import "./Controller.css";
+// import Full from "../../assets/Full.png";
+// import Zoom from "../home/akuma/Documents/Lab/public/iconmonstr-zoom-1.svg";
+// import Info from "../home/akuma/Documents/Lab/public/iconmonstr-info-1.svg";
+// import Square from "../home/akuma/Documents/Lab/public/iconmonstr-x-mark-square-lined.svg";
+
 
 
 function Controller() {
@@ -9,15 +14,23 @@ function Controller() {
     <div>
         <div className="nav">
             
-            <img className="logo" src="https://www.izasascientific.com/sites/default/files/2021-08/logo%20precipoint.png" alt="logo" />
-            <a className="public" href="/">Public Slides</a>
-            <a className="rest" href="/">My Slides</a>
-            <a className="rest" href="/">Upload</a>
-            <div className="Btn">
-                <a className="rest1" href="/">Login</a>
-                <a className="rest2" href="/">Get Started</a>
-            </div>
-            
+            <a className="zoom1" href="/">5x</a>
+            <a className="zoom2" href="/">10x</a>
+            <a className="zoom3" href="/">20x</a>
+            <a className="zoom4" href="/">40x</a>
+            <a className="zoom5" href="/">60x</a>
+            <a className="minus" href="/">-</a>
+            <a className="minus" href="/">+</a>
+            {/* <img className="logo" src={Full} alt="fit" />
+            <img className="logo" src={Zoom} alt="cross" /> */}
+
+            {/* <div className="Btn">
+                
+                <img className="logo" src={Info} alt="info" />
+                <img className="logo" src={Square} alt="full" />
+
+            </div> */}
+
         </div>
     </div>
     

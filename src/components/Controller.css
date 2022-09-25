@@ -1,0 +1,95 @@
+.nav{
+    height: 10vh;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 8 12px;
+    flex-wrap: nowrap;
+    
+}
+
+.zoom1{
+    font-weight: 700;
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 25px;
+    margin: 20px;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 3px;
+    border-bottom-width: 10px;
+    text-underline-offset: 0.5rem;
+    
+}
+
+.zoom2{
+    font-weight: 700;
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 25px;
+    margin: 20px;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    text-decoration-color: yellow;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.5rem;
+    
+}
+
+.zoom3{
+    font-weight: 700;
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 25px;
+    margin: 20px;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    text-decoration-color: green;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.5rem;
+    
+}
+
+.zoom4{
+    font-weight: 700;
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 25px;
+    margin: 20px;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    text-decoration-color: cyan;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.5rem;
+    
+}
+
+.zoom5{
+    font-weight: 700;
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 25px;
+    margin: 20px;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    text-decoration-color: blue;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.5rem;
+    border-right: 3px solid rgb(209, 194, 194);
+    
+}
+
+.minus{
+    font-weight: 700;
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 25px;
+    margin: 20px;
+
+    
+}
