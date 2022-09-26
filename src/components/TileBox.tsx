@@ -1,27 +1,29 @@
 import {useState, useEffect} from "react";
 import "../components/TileBox.css";
 
-interface Product {    
+interface Product {
+    
     _id: string;
     _fileName: string;
 }
 
 
-
-function TileBox(this: any, props: any) {
+function TileBox(props: any) {
         const [post, setPosts] = useState<Product[]>([]);    
     const fetchPost = async () => {
             
             const response = await fetch ("https://imgmgt.api.preci.cloud/api/SlideImages")
-
+            
             const data =await response.json();
             setPosts(data);
+
+            // console.log(data);
             
             if(!response.ok){
             const msg = `An error has occured: ${response.status}`;
             throw new Error(msg);
          }
-            // console.log(data);
+            console.log(data);
         };
         useEffect(() => {
             fetchPost();
@@ -32,43 +34,25 @@ function TileBox(this: any, props: any) {
     
     return(
 
-        <div>
-            <h1>handle</h1>
-            <pre>{JSON.stringify(post, null, 2)}</pre>
-            {/* {
-                Object.values(post).map((post: any) => {
-                    return(
-                        console.log(post),
-                        <div>
-                            <img src={post._id} alt="" />
-                            <h1>{post._fileName}</h1>
-                        </div>
-                    )
-                }
-                ) } */}
+        <div className="row">
+            <div className="col-md-12 text-center">
+                <h1>Fetch data</h1>
+                <button onClick={fetchPost} className="btn btn-primary" >show data</button>
+
+            </div>
+            {Object.values(post).map(pro  => {
+                return (
+                    console.log(pro),
+                    <div className="grid">
+                        <img key ={pro._id} src={pro._id} className="tiles" alt="tiles"/>
+                        <p key={pro._fileName} className="snipped" >{pro._fileName}</p>
+                    </div>
+                )
+            })}
+
+
+
         </div>
-
-
-
-
-        // <div className="row">
-        //     <div className="col-md-12 text-center">
-        //         <h1>Fetch data</h1>
-        //         <button onClick={fetchPost} className="btn btn-primary" >show data</button>
-
-        //     </div>
-        //     {Object.values(post).map(pro  => {
-        //         return (
-        //             <div className="grid">
-        //                 <img key ={pro._id} src={pro._id} className="tiles" alt="tiles"/>
-        //                 <p key={pro._fileName} className="snipped" >{pro._fileName}</p>
-        //             </div>
-        //         )
-        //     })}
-
-
-
-        // </div>
             
 
     )
