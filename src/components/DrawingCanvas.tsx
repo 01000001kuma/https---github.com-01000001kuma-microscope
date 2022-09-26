@@ -5,6 +5,16 @@ import React, { useRef, useEffect } from 'react';
 const SimpleCanvasExample: React.FC<{}> = () => {
   let canvasRef = useRef<HTMLCanvasElement | null>(null);
   let canvasCtxRef = React.useRef<CanvasRenderingContext2D | null>(null);
+  let image = new Image();
+    image.src = "https://www.kirupa.com/html5/images/pressing_down_200.png"
+    image.onload = () => {
+        if (canvasCtxRef.current) {
+            canvasCtxRef.current.drawImage(image, 0, 0);
+        }
+    };
+    
+
+  
 
   useEffect(() => {
     // Initialize
@@ -13,7 +23,6 @@ const SimpleCanvasExample: React.FC<{}> = () => {
       
       let ctx = canvasCtxRef.current;
       ctx!.beginPath();
-      ctx!.arc(95, 50, 40, 0, 5 * Math.PI);
       ctx!.stroke();
       
     }
