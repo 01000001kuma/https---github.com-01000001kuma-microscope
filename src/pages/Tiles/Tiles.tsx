@@ -201,14 +201,6 @@ export function Tiles() {
 //           this.ctx.clearRect(0, 0, this.cavW, this.cavH)
 //         }
       
-//         /**
-//          * 画
-//          * x the location of the picture
-//          * y the location of the picture
-//          * w width of the picture
-//          * h width of the picture
-//          *
-//          * */
 //         renderImage(x, y, w, h) {
 //           this.clearCanvas()
 //           this.ctx.save()
@@ -221,29 +213,6 @@ export function Tiles() {
 //           this.ctx.restore()
 //         }
       
-//         // Rotation angle
-//         rotate(rad) {
-//           this.angle += rad
-//           this.draw()
-//         }
-      
-//         // vertical mirror
-//         vRevert() {
-//           this.isVRevert *= -1
-//           this.draw()
-//         }
-      
-//         // Horizontal mirror
-//         hRevert() {
-//           this.isHRevert *= -1
-//           this.draw()
-//         }
-//         draw() {
-//           let size = this.getFitSize()
-//           this.renderImage(this.imgX, this.imgY, size.w * this.imgScale, size.h * this.imgScale)
-//         }
-//       }
-//     }
 
 
     return (
