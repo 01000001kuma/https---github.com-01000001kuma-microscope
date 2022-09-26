@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar'
-// import Controller from '../../components/Controller';
+import Controller from '../../components/Controller';
 import './Home.module.css'
-// import TileBox from '../../components/TileBox';
+import TileBox from '../../components/TileBox';
 import DrawingCanvas from "../../components/DrawingCanvas";
 
 
@@ -13,9 +13,9 @@ export function Home() {
         
         <>
         <Navbar />
+        <Controller />
         <DrawingCanvas />
-        {/* <Controller />
-        <TileBox tile={undefined} /> */}
+        <TileBox tile={undefined} />
         </>
     );
 
