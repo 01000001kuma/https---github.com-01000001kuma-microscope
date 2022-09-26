@@ -1,5 +1,156 @@
-import './DrawingCanvas.css';
 
+        
+        
+        // THIS IMAGE VIEWER DOES NOT RESPOND BECAUSE I WASN'T ABLE TO TRANSLATE IT FROM PURE VANILLA JAVASCRIPT TO TYPESCRIPT TO VIEW A 
+        // WORKING LIVE EXAMPLE CLICK HERE: https://codepen.io/01000001kuma/pen/XWVJqbW
+
+
+
+    //     var canvas = document.getElementsByTagName('canvas')[0];
+    //     canvas.width = 800;
+    // canvas.height = 600;
+    
+    //     var gkhead = new Image;
+    
+    //     window.onload = function(){		
+        
+    //             var ctx = canvas.getContext('2d');
+    //             trackTransforms(ctx);
+              
+    //     function redraw(){
+    
+    //           // Clear the entire canvas
+    //           var p1 = ctx.transformedPoint(0,0);
+    //           var p2 = ctx.transformedPoint(canvas.width,canvas.height);
+    //           ctx.clearRect(p1.x,p1.y,p2.x-p1.x,p2.y-p1.y);
+    
+    //           ctx.save();
+    //           ctx.setTransform(1,0,0,1,0,0);
+    //           ctx.clearRect(0,0,canvas.width,canvas.height);
+    //           ctx.restore();
+    
+    //           ctx.drawImage(gkhead,0,0);
+    
+    //         }
+    //         redraw();
+    
+    //       var lastX=canvas.width/2, lastY=canvas.height/2;
+    
+    //       var dragStart,dragged;
+    
+    //       canvas.addEventListener('mousedown',function(evt){
+    //           document.body.style.mozUserSelect = document.body.style.webkitUserSelect = document.body.style.userSelect = 'none';
+    //           lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
+    //           lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
+    //           dragStart = ctx.transformedPoint(lastX,lastY);
+    //           dragged = false;
+    //       },false);
+    
+    //       canvas.addEventListener('mousemove',function(evt){
+    //           lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
+    //           lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
+    //           dragged = true;
+    //           if (dragStart){
+    //             var pt = ctx.transformedPoint(lastX,lastY);
+    //             ctx.translate(pt.x-dragStart.x,pt.y-dragStart.y);
+    //             redraw();
+    //                 }
+    //       },false);
+    
+    //       canvas.addEventListener('mouseup',function(evt){
+    //           dragStart = null;
+    //           if (!dragged) zoom(evt.shiftKey ? -1 : 1 );
+    //       },false);
+    
+    //       var scaleFactor = 1.1;
+    
+    //       var zoom = function(clicks){
+    //           var pt = ctx.transformedPoint(lastX,lastY);
+    //           ctx.translate(pt.x,pt.y);
+    //           var factor = Math.pow(scaleFactor,clicks);
+    //           ctx.scale(factor,factor);
+    //           ctx.translate(-pt.x,-pt.y);
+    //           redraw();
+    //       }
+    
+    //       var handleScroll = function(evt){
+    //           var delta = evt.wheelDelta ? evt.wheelDelta/40 : evt.detail ? -evt.detail : 0;
+    //           if (delta) zoom(delta);
+    //           return evt.preventDefault() && false;
+    //       };
+        
+    //       canvas.addEventListener('DOMMouseScroll',handleScroll,false);
+    //       canvas.addEventListener('mousewheel',handleScroll,false);
+    //     };
+    
+    //     image.src = 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png';  // THIS COULD BE EASLY ACCES BY AN API CALL TO GET THE IMAGE FROM THE SERVER
+        
+    //     // Adds ctx.getTransform() - returns an SVGMatrix
+    //     // Adds ctx.transformedPoint(x,y) - returns an SVGPoint
+    //     function trackTransforms(ctx){
+    //       var svg = document.createElementNS("http://www.w3.org/2000/svg",'svg');
+    //       var xform = svg.createSVGMatrix();
+    //       ctx.getTransform = function(){ return xform; };
+    
+    //       var savedTransforms = [];
+    //       var save = ctx.save;
+    //       ctx.save = function(){
+    //           savedTransforms.push(xform.translate(0,0));
+    //           return save.call(ctx);
+    //       };
+        
+    //       var restore = ctx.restore;
+    //       ctx.restore = function(){
+    //         xform = savedTransforms.pop();
+    //         return restore.call(ctx);
+    //               };
+    
+    //       var scale = ctx.scale;
+    //       ctx.scale = function(sx,sy){
+    //         xform = xform.scaleNonUniform(sx,sy);
+    //         return scale.call(ctx,sx,sy);
+    //               };
+        
+    //       var rotate = ctx.rotate;
+    //       ctx.rotate = function(radians){
+    //           xform = xform.rotate(radians*180/Math.PI);
+    //           return rotate.call(ctx,radians);
+    //       };
+        
+    //       var translate = ctx.translate;
+    //       ctx.translate = function(dx,dy){
+    //           xform = xform.translate(dx,dy);
+    //           return translate.call(ctx,dx,dy);
+    //       };
+        
+    //       var transform = ctx.transform;
+    //       ctx.transform = function(a,b,c,d,e,f){
+    //           var m2 = svg.createSVGMatrix();
+    //           m2.a=a; m2.b=b; m2.c=c; m2.d=d; m2.e=e; m2.f=f;
+    //           xform = xform.multiply(m2);
+    //           return transform.call(ctx,a,b,c,d,e,f);
+    //       };
+        
+    //       var setTransform = ctx.setTransform;
+    //       ctx.setTransform = function(a,b,c,d,e,f){
+    //           xform.a = a;
+    //           xform.b = b;
+    //           xform.c = c;
+    //           xform.d = d;
+    //           xform.e = e;
+    //           xform.f = f;
+    //           return setTransform.call(ctx,a,b,c,d,e,f);
+    //       };
+        
+    //       var pt  = svg.createSVGPoint();
+    //       ctx.transformedPoint = function(x,y){
+    //           pt.x=x; pt.y=y;
+    //           return pt.matrixTransform(xform.inverse());
+    //       }
+    //     }
+
+
+import './DrawingCanvas.css';
 import React, { useRef, useEffect } from 'react';
 
 const SimpleCanvasExample: React.FC<{}> = () => {
@@ -21,7 +172,7 @@ const SimpleCanvasExample: React.FC<{}> = () => {
         ctx!.canvas.width = window.innerWidth;
         ctx!.canvas.height = window.innerHeight;
 
-        imageObj.onclick = function() {
+        imageObj.onclick = function up() {
             ctx!.scale(1,2);
         };
         
@@ -50,12 +201,15 @@ const SimpleCanvasExample: React.FC<{}> = () => {
             <a className="zoom3" href="/">20x</a>
             <a className="zoom4" href="/">40x</a>
             <a className="zoom5" href="/">60x</a>
-            <button onClick=""></button>
             <a className="minus" href="/">-</a>
             <a className="minus" href="/">+</a>
 
         </div>
     </div>
+     
+    <h3>This image viewer does not respond because I wasn't able to translate it from pure VANILLA JAVASCRIPT to TYPESCRIPT.
+    <br /> TO VIEW A WORKING LIVE EXAMPLE PLEASE CLICK HERE: <a href="https://codepen.io/01000001kuma/pen/XWVJqbW">https://codepen.io/01000001kuma/pen/XWVJqbW</a>
+    </h3>
     
     <canvas className='canvas-container' ref={canvasRef}>
 
@@ -68,254 +222,3 @@ const SimpleCanvasExample: React.FC<{}> = () => {
 
 export default SimpleCanvasExample;
 
-
-export default class Viewer {
-    constructor(canvas, image) {
-      this.canvas = canvas
-      // 图片
-      this.image = image
-      // 原始图片
-      this.originalImg = image
-      this.ctx = this.canvas.getContext('2d')
-  
-      /**
-      * return {}
-      * {} x 图片显示的x坐标
-      * {} y 图片显示的y坐标
-      * {} w 图片宽度
-      * {} h 图片高度
-      *
-      */
-      this.getFitSize = function () {
-        let x = 0
-        let y = 0
-        let w = this.imageW // 图片的宽度
-        let h = this.imageH // 图片的高度
-        let cw = this.cavW // 画布的宽度
-        let ch = this.cavH // 画布的高度
-        if (w < cw && h < ch) {
-          x = 0.5 * cw - 0.5 * w
-          y = 0.5 * ch - 0.5 * h
-        } else if (h / w > ch / cw) {
-          w = w * ch / h // ()
-          h = ch// 图片的高度置成画布高度
-          x = 0.5 * cw - 0.5 * w
-        } else {
-          h = h * cw / w
-          w = cw// 图片的宽度置成画布宽度
-          y = 0.5 * ch - 0.5 * h
-        }
-        return {
-          x, y, w, h
-        }
-      }
-  
-      this.isNum = function (o) {
-        return /^(-?\d+)(\.\d+)?$/.test(o)
-      }
-      // 初始化
-      this.init()
-    }
-  
-    init() {
-      this.initData()
-      this.initListener()
-    }
-  
-    initData() {
-      let { width: imageW, height: imageH } = this.image
-      let { width: cavW, height: cavH } = this.canvas
-      // 放大倍数
-      this.imgScale = 1
-      // 旋转角度
-      this.angle = 0
-      // 竖向像素反转
-      this.isVRevert = 1
-      // 横向像素反转
-      this.isHRevert = 1
-      // 是否移动
-      this.isMove = false
-      // 图片的宽度
-      this.imageW = imageW
-      // 图片的高度
-      this.imageH = imageH
-      // 画布的宽度
-      this.cavW = cavW
-      // 画布的高度
-      this.cavH = cavH
-      let size = this.getFitSize()
-      this.imgX = size.x
-      this.imgY = size.y
-      this.image = this.originalImg
-    }
-  
-    // 初始化监听
-    initListener() {
-      this.canvas.addEventListener('mousedown', this, false)
-      this.canvas.addEventListener('mouseup', this, false)
-      this.canvas.addEventListener('mouseout', this, false)
-      this.canvas.addEventListener('mousewheel', this, false)
-    }
-  
-    handleEvent(e) {
-      switch (e.type) {
-        case 'mousemove':
-          this.mousemove(e)
-          break
-        case 'mousewheel':
-          this.mousewheel(e)
-          break
-        case 'mouseup':
-          this.mouseup(e)
-          break
-        case 'mousedown':
-          this.mousedown(e)
-          break
-        case 'mouseout':
-          this.mouseout(e)
-          break
-      }
-    }
-    mouseout() {
-      this.isMove = false
-      this.canvas.style.cursor = 'default '
-      this.canvas.removeEventListener('mousemove', this, false)
-    }
-  
-    // 鼠标按下
-    mousedown(event) {
-      this.mouseDownPos = this.windowToCanvas(event.clientX, event.clientY)
-      this.isMove = true
-      this.canvas.style.cursor = 'move'
-      this.canvas.addEventListener('mousemove', this, false)
-    }
-  
-    // 鼠标抬起
-    mouseup() {
-      this.isMove = false
-      this.canvas.style.cursor = 'default '
-      this.canvas.removeEventListener('mousemove', this, false)
-    }
-  
-    // 鼠标移动
-    mousemove(event) {
-      if (!this.isMove) {
-        return
-      }
-      let pos = this.mouseDownPos
-      this.canvas.style.cursor = 'move'
-      let pos1 = this.windowToCanvas(event.clientX, event.clientY)
-      let x = pos1.x - pos.x
-      let y = pos1.y - pos.y
-      this.mouseDownPos = pos1
-      this.imgX += x
-      this.imgY += y
-      // drawImage()
-      this.draw()
-    }
-  
-    // 监听canvas放大缩小事件
-    mousewheel(event) {
-      let pos = this.windowToCanvas(event.clientX, event.clientY)
-      let _wheelDelta = event.wheelDelta ? event.wheelDelta : (event.deltaY * (-40))
-      if (_wheelDelta > 0) { // 放大
-        this.imgScale *= 2
-        this.imgX = this.imgX * 2 - pos.x
-        this.imgY = this.imgY * 2 - pos.y
-      } else {
-        this.imgScale /= 2
-        this.imgX = this.imgX * 0.5 + pos.x * 0.5
-        this.imgY = this.imgY * 0.5 + pos.y * 0.5
-      }
-      this.draw()
-    }
-    scale(num) {
-      if (this.isNum(num)) {
-        this.imgScale *= num
-        this.draw()
-      }
-    }
-    // 设置成原始尺寸
-    setOriginalSize() {
-      let size = this.getFitSize()
-      this.imgScale = this.originalImg.width / size.w
-      let pos = {
-        x: this.cavW / 2 - this.originalImg.width / 2,
-        y: this.cavH / 2 - this.originalImg.height / 2
-      }
-      if (this.imgScale > 1) { // 放大
-        this.imgX = pos.x * this.imgScale
-        this.imgY = pos.y * this.imgScale
-      } else {
-        this.imgX = pos.x / this.imgScale
-        this.imgY = pos.y / this.imgScale
-      }
-      this.draw()
-    }
-    // 销毁
-    dstroy() {
-      this.canvas.removeEventListener('mousedown', this, false)
-      this.canvas.removeEventListener('mouseout', this, false)
-      this.canvas.removeEventListener('mousewheel', this, false)
-      this.canvas.removeEventListener('mouseup', this, false)
-      this.canvas.removeEventListener('mousemove', this, false)
-      this.canvas = null
-      this.image = null
-    }
-  
-    // 获取窗口中canvas的区域
-    windowToCanvas(x, y) {
-      let bbox = this.canvas.getBoundingClientRect()
-      return {
-        x: x - bbox.left - (bbox.width - this.cavW) / 2,
-        y: y - bbox.top - (bbox.height - this.cavH) / 2
-      }
-    }
-  
-    // 清空
-    clearCanvas() {
-      this.ctx.clearRect(0, 0, this.cavW, this.cavH)
-    }
-  
-    /**
-     * 画
-     * x 图片的位置
-     * y 图片的位置
-     * w 图片的宽
-     * h 图片的高
-     *
-     * */
-    renderImage(x, y, w, h) {
-      this.clearCanvas()
-      this.ctx.save()
-      this.ctx.fillStyle = 'white'
-      this.ctx.fill()
-      this.ctx.translate(x + w / 2, y + h / 2)
-      this.ctx.rotate(this.angle)
-      this.ctx.scale(this.isHRevert, this.isVRevert)
-      this.ctx.drawImage(this.image, 0, 0, this.imageW, this.imageH, -w / 2, -h / 2, w, h)
-      this.ctx.restore()
-    }
-  
-    // 旋转角度
-    rotate(rad) {
-      this.angle += rad
-      this.draw()
-    }
-  
-    // 垂直镜像
-    vRevert() {
-      this.isVRevert *= -1
-      this.draw()
-    }
-  
-    // 水平镜像
-    hRevert() {
-      this.isHRevert *= -1
-      this.draw()
-    }
-    draw() {
-      let size = this.getFitSize()
-      this.renderImage(this.imgX, this.imgY, size.w * this.imgScale, size.h * this.imgScale)
-    }
-  }
