@@ -208,7 +208,7 @@ const SimpleCanvasExample: React.FC<{}> = () => {
     </div>
      
     <h3>This image viewer does not respond because I wasn't able to translate it from pure VANILLA JAVASCRIPT to TYPESCRIPT.
-    <br /> TO VIEW A WORKING LIVE EXAMPLE PLEASE CLICK HERE: <a href="https://codepen.io/01000001kuma/pen/XWVJqbW">https://codepen.io/01000001kuma/pen/XWVJqbW</a>
+    <br /> TO VIEW A WORKING LIVE EXAMPLE PLEASE CLICK HERE: <a target="_blank" href="https://codepen.io/01000001kuma/pen/XWVJqbW" rel="noreferrer">https://codepen.io/01000001kuma/pen/XWVJqbW</a>
     </h3>
     
     <canvas className='canvas-container' ref={canvasRef}>
